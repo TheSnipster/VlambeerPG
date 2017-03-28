@@ -10,8 +10,10 @@ public class PathMaker : MonoBehaviour
 	public Transform pathmakerSpherePrefab;
 	//public static int globalTileCount = 500; 
 
-	List<Transform> tileList = new List<Transform> ();
+	//List<Transform> tileList = new List<Transform> ();
 	List<Transform> pathMakerList = new List<Transform> ();
+
+	public GameObject[] tiles;
 
 	
 	// Update is called once per frame
@@ -32,11 +34,14 @@ public class PathMaker : MonoBehaviour
 			} else {
 				Destroy (this.gameObject);
 			}
+
+			Instantiate (tiles[UnityEngine.Random.Range(0,3)], transform.position, Quaternion.identity);
+
 		
-			Transform newTileClone = (Transform)Instantiate (floorPrefab, transform.position, Quaternion.identity);
+			//GameObject newTileClone = (GameObject) Instantiate (tiles[UnityEngine.Random.Range(0,3)], transform.position, Quaternion.identity);
 			//Instantiate (floorPrefab, transform.position, Quaternion.identity);
 			transform.Translate (0f, 0f, 5f);
-			tileList.Add (newTileClone); //add tile clone to list
+			//tileList.Add (newTileClone); //add tile clone to list
 			floorCounter++;
 		}
 
