@@ -21,7 +21,7 @@ public class PathMaker : MonoBehaviour
 	{
 		int floorCounter = 0; 
 
-		while (floorCounter < 500) {
+		if (floorCounter < 500) {
 			float myRandomNumber = Random.Range (0.0f, 1.0f); 
 			if (myRandomNumber < 0.25f) {
 				transform.Rotate (0f, 90f, 0f);
